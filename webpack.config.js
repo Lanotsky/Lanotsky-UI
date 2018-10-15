@@ -5,6 +5,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+// const webpack = require('webpack);
 
 module.exports = {
     mode: 'development',
@@ -19,7 +20,8 @@ module.exports = {
     // debugging source map
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        // hot: true // if using webpack-dev-middleware see https://webpack.js.org/guides/hot-module-replacement/
     },
     module: {
         // parse any JSX or JS file to es6
@@ -34,7 +36,6 @@ module.exports = {
           {
             test: /\.scss$/,
             use: [
-                'style-loader',
                 MiniCssExtractPlugin.loader, 
                 "css-loader",
                 'postcss-loader',
@@ -65,6 +66,7 @@ module.exports = {
         ]
     },
     plugins: [
+        //  new webpack.HotModuleReplacementPlugin()
         new HtmlWebPackPlugin({
             template: './src/index.html'
         }),
