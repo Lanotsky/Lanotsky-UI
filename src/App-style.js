@@ -4,17 +4,21 @@ export const Container = styled.div`
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 240px calc(100% - 240px);
     grid-auto-rows: auto;
     background-color: rgba(245,245,245,0.8);
+    overflow: auto;
+    @media (max-width: 620px) {
+        grid-template-columns: auto;
+    }
 `;
 
 export const Sidebar = styled.div`
     grid-column: 1 / span 1;
     min-height: 100vh;
     box-shadow: 2px 0 5px rgba(10,10,10,0.5);
-    @media (max-width: 700px) {
-        grid-column: 1 / span 2;
+    @media (max-width: 620px) {
+        grid-column: 1 / span 1;
         grid-row: 2 / span 1;
     }
 `;
@@ -23,7 +27,7 @@ export const Content = styled.div`
       grid-column: 2 / span 1;
       background-color: rgba(230,230,230,0.5);
       @media (max-width: 700px) {
-        grid-column: 1 / span 2;
+        grid-column: 1 / span 1;
         grid-row: 1 / span 1;
         }
 `;
