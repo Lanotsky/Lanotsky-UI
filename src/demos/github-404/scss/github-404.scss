@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One');
+
+
+.github-404 {
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-color: white;
+    ._404-banner {
+        height: 300px;
+        width: 100%;
+        background-color: rgba(10,160,255,1);    
+    }
+    ._404-desc {
+        height: auto;
+        width: 100%;
+        background-color: rgba(230,230,255,1);
+        p {
+            margin: 0 5%;
+            padding: 10px 0;
+            display: block;
+                &:nth-child(1) {
+                    padding-top: 6%;
+                }
+                &:last-child {
+                    padding-bottom: 6%;
+                }
+        }
+        .title {
+            font-size: 30px;
+            font-weight: 400;
+            font-family: 'Patua One', cursive;
+        }
+    }
+}
