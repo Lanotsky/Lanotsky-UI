@@ -35,7 +35,22 @@
 }
 
 ._404-banner {
+    overflow: hidden;
     h1 {
         text-align: center;
+    }
+    .img-wrapper {
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        p {
+            margin-top: 100px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+        }
     }
 }

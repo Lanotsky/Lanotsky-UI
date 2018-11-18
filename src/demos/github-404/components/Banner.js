@@ -6,7 +6,7 @@ class Banner extends Component {
     render() { 
         return (
             <div className="_404-banner">
-                
+                {this.props.children}
             </div>
         );
     }

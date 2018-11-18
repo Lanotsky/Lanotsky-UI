@@ -33,6 +33,12 @@ module.exports = {
               loader: "babel-loader"
             }
           },
+          // reads for any typeScript
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            },
           {
             test: /\.scss$/,
             use: [
@@ -64,6 +70,9 @@ module.exports = {
             ]
           }
         ]
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
     },
     plugins: [
         //  new webpack.HotModuleReplacementPlugin()
