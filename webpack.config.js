@@ -20,7 +20,9 @@ module.exports = {
     // debugging source map
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist',
+        contentBase: path.resolve(__dirname, 'dist'),
+        compress: true,
+        port: 8080,
         // hot: true // if using webpack-dev-middleware see https://webpack.js.org/guides/hot-module-replacement/
     },
     module: {
@@ -86,7 +88,7 @@ module.exports = {
         }),
         new BrowserSyncPlugin({
             host: 'localhost',
-            port: 3000,
+            port: 8000,
             proxy: 'http://localhost:8080/'
         }),
         new CleanWebpackPlugin('dist', {} ),    
