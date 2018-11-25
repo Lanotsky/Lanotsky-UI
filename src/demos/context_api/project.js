@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import GrandChild from './components/GrandChild';
-import {MyContext} from './cusotom_context';
+import {MyContext} from './contexts';
 
 const Nested_dolls = (props) =>{
     return (

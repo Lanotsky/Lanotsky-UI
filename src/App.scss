@@ -2,14 +2,18 @@
 
 .main-container {
     height: 100%;
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-rows: auto minmax(90px, 120px);
+    grid-template-columns: minmax(120px, 200px) auto;
     box-sizing: border-box;
     box-shadow: 1px 1px 3px rgba(10,10,10,0.6);
     background-color: #F0F4F5;
+    @media screen and (max-width: 678px){
+        grid-template-columns: minmax(0px, 100%) auto;
+    }
     .app {
+        grid-column: 2;
         grid-row: 1;
         min-height: 340px;
         border-bottom: 1px solid rgba(10,10,10,0.2);
@@ -17,8 +21,12 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        @media screen and (max-width: 520px){
+            
+        }
     }
     .app-desc {
-        grid-row: 2;
+        grid-row: 1;
+        background-color: rgba(240,240,240,1);
     }   
 }
