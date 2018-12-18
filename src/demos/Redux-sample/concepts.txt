@@ -1,0 +1,66 @@
+In redux. Your state (model) is defined as an immutable object
+{
+    todos:[
+        {
+            text: 'eat-lunch',
+            completed: true,
+        },
+        {
+            text: 'buy-clothes',
+            completed: false,
+        }
+        visibilityFilter: 'SHOW-COMPLETED'
+    ]
+}
+
+to change something you have to dispach actions. An action describes what will happen
+actions are like breadcrumbs of what happend or what changed
+{ type: 'ADD-TODO',  {text: 'read-books'}}
+{ type: 'REMOVE-TODO',  {text: 'read-books'}}
+
+lastly we have reducers. They do nothing but take an action and the current state
+and return the next state
+
+function visibilityFilter(state='SHOW-ALL',action) {
+    if(action.type==='SET_VISIBILITY_FILTER') {
+        return action.filter
+    }else {
+        return state
+    }
+}
+
+// run on an individual state
+function todo_run(state=[],action){
+    switch (actioin.type) {
+        case: 'ADD_TODO'
+            return state.concat([{action.text, completed: false}]);
+        case: 'TOGGLE_TODO'
+        // map returns an new state array
+            return  state.map(
+                (item, i)=>(
+                    // for each item in the state
+                    // return a new object with the flipped the completed value 
+                    // else return the item itself
+                    (action.index===index) ? {text: item.text, !item.completed} : item;
+                )
+            )
+        default: 
+            return state;
+    }
+}
+
+// basically 'reduces' all other reducers to one reducer
+// run on the main state
+function todoApp(state = {}, action) {
+  return {
+    todos: todos(state.todos, action),
+    visibilityFilter: visibilityFilter(state.visibilityFilter, action)
+  }
+}
+
+
+the state is read only. The only way to make changes is to emit an action
+
+import { combineReducers, createStore } from 'redux'
+const reducer = combineReducers({ visibilityFilter, todos })
+const store = createStore(reducer)
