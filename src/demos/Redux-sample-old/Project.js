@@ -5,6 +5,7 @@ import Btn from './components/Btn';
 import colorFlip from './reducers/reducer';
 import {flipColor, logText} from './actions/index';
 import { Provider } from 'react-redux'
+import Application from './components/Application'
 
 const store = createStore(colorFlip);
 const unsubscribe = store.subscribe(() => console.log(store.getState()))
@@ -26,8 +27,7 @@ class Example extends Component {
         return(
             <Provider store={store}>
                 <div>
-                    <Toolbar/>
-                    <Btn />
+                    <Application />
                 </div>
             </Provider>
         )

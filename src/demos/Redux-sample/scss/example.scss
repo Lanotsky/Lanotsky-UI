@@ -9,7 +9,22 @@
     margin: 0 auto;
     width: 50%;
     padding: 10% 0;
-    input {
-        width: 100%;
-    }
+    box-sizing: border-box;
+    // form {
+    //     box-sizing: border-box;
+    //     font-size: 0;
+    //     letter-spacing: 0;
+    // }
+    // input {
+    //     font-size: 16px;
+    //     display: inline-block;
+    //     width: 75%;
+    // }
+    // label {
+    //     text-align: center;
+    //     font-size: 16px;
+    //     color: white;
+    //     display: inline-block;
+    //     width: 22%;
+    // }
 }

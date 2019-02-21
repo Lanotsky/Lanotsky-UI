@@ -20,7 +20,7 @@ class Context_api extends Component {
     }
     render(){
         return(
-            <MyContext.Provider value="some-value">
+            <MyContext.Provider value="some-value-value">
                 <Nested_dolls className="nested-1 doll">
                     <Nested_dolls className="nested-2 doll">
                         <Nested_dolls className="nested-3 doll">
